@@ -1,0 +1,54 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Minimal Journal - Jackson's Site">
+    <h1>Minimal Journal</h1>
+    <p>
+        This is just a simple little journaling app I wanted to make for my
+        personal use. The main thing I wanted was to just have one place I
+        could quickly get to on my Mac where I could keep journaling thoughts. I 
+        made it over the course of four days, with probably about 10 hours actually 
+        working on it, essentially entirely using Claude Code. I have not read 
+        much of the code.
+    </p>
+    <p>
+        On the one hand, this entirely vibe-coded approach means I didn't really 
+        learn much software engineering from making it. I did learn some things about
+        optimal AI-driven development, but I know little more about electron or JS or
+        Mac apps. On the other hand, I now have a useful tool. Indeed, I use the app
+        probably three or four times per week when I want to get something written down.
+        The main benefit to this sort of custom software is that it can work exactly how
+        my brain wants it to. It has all the keyboard shortcuts I want, it looks how I
+        would like it to, it has all the functionality I need.
+        There are certainly tradeoffs involved in this approach, but I think it is worth
+        it for me to get some custom software that I enjoy using. After this project, 
+        I am trying to keep more of the software design in my head. I still use Claude
+        Code quite a bit, but I at least want to know how everything fits together so I
+        can learn about system architecture, even if I am not learning that much about
+        the details of the code.
+    </p>
+    <p>
+        The main lesson I learned here was just how important having a plan is before starting
+        project, especially if using AI tools. Claude Code can churn out so much code so
+        quickly that it is easy to get yourself wrapped up in a giant codebase before you
+        can find your bearings and figure out what you actually want to make. I spent about an
+        hour, maybe more, before starting just writing a comprehensive plan for the project,
+        including a sketch of the interface. This isn't a huge time investment, but it helped
+        me actually get the project done.
+    </p>
+    <p>
+        Finally, I should note that this project was especially well-suited to getting vibe
+        coded. It is a standalone app written in one of the most popular frameworks, meaning
+        there is less actual infrastructure to ship and that the models will, on average, be
+        better at coding in the languages used for this. 
+    </p>
+    <p>
+        I am not currently developing the app any more. There are some things I would like to
+        fix. Most of the features in the settings panel are a little broken. At the moment, though,
+        I don't really care. It does what I need to do. I am very annoyed that this simple little
+        app is over 100 MB due to electron, which may be worth fixing via a rewrite at some point,
+        but I'm in no rush. I will link to the github I used for this at some point.
+    </p>
+    
+</BaseLayout>

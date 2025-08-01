@@ -1,0 +1,48 @@
+/* Global styles for Jackson's Site */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', monospace;
+  background-color: #0d1117;
+  color: #c9d1d9;
+  min-height: 100vh;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr min(800px, 100%) 1fr;
+  grid-template-rows: auto;
+  align-content: start;
+  padding: 2rem 0;
+  line-height: 1.6;
+  text-align: left;
+  width: 100%;
+}
+
+body > * {
+  grid-column: 2;
+  padding: 0 2rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #58a6ff;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: #58a6ff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

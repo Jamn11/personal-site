@@ -1,0 +1,231 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Software projects with download links
+const softwareProjects = [
+	{
+		name: "Minimal Journal",
+		description: "Basic journal app for MacOS. Keyboard driven with a minimal interface. Fully vibe coded with Claude Code, so be careful.",
+		version: "1.3.0",
+		downloadUrl: "/downloads/minimal-journal-1.3.0-arm64.dmg",
+		infoUrl: "/software/minimal-journal",
+		fileSize: "100.4 MB",
+		requirements: "macOS 10.15 or later",
+		releaseDate: "2025-01-15",
+		features: [
+			"MacOS",
+            "Keyboard driven",
+            "Minimalist interface",
+            "Export to markdown"
+		]
+	}
+];
+---
+
+<BaseLayout title="Software - Jackson's Site">
+	<h1>Software</h1>
+	<p>Various coding projects I have worked on.</p>
+	
+	<div class="software-grid">
+		{softwareProjects.map((project) => (
+			<article class="software-card">
+				<header>
+					<h2>
+						{project.infoUrl ? (
+							<a href={project.infoUrl}>{project.name}</a>
+						) : (
+							project.name
+						)}
+					</h2>
+					<span class="version">v{project.version}</span>
+				</header>
+				
+				<p class="description">{project.description}</p>
+				
+				<div class="features">
+					<h3>Features:</h3>
+					<ul>
+						{project.features.map(feature => <li>{feature}</li>)}
+					</ul>
+				</div>
+				
+				<div class="details">
+					<div class="detail-item">
+						<strong>Requirements:</strong> {project.requirements}
+					</div>
+					<div class="detail-item">
+						<strong>File Size:</strong> {project.fileSize}
+					</div>
+					<div class="detail-item">
+						<strong>Released:</strong> {new Date(project.releaseDate).toLocaleDateString('en-US', {
+							year: 'numeric',
+							month: 'long', 
+							day: 'numeric'
+						})}
+					</div>
+				</div>
+				
+				<div class="download-section">
+					<a href={project.downloadUrl} class="download-btn" download>
+						⬇️ Download {project.name}
+					</a>
+					<span class="file-info">.dmg file • {project.fileSize}</span>
+				</div>
+			</article>
+		))}
+	</div>
+	
+	{softwareProjects.length === 0 && (
+		<p>No software available yet. Check back soon!</p>
+	)}
+</BaseLayout>
+
+<style>
+	.software-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+		gap: 2rem;
+		margin-top: 2rem;
+	}
+	
+	.software-card {
+		border: 1px solid #30363d;
+		border-radius: 0.75rem;
+		padding: 2rem;
+		background: linear-gradient(145deg, #0d1117 0%, #161b22 100%);
+		transition: transform 0.2s ease, border-color 0.2s ease;
+	}
+	
+	.software-card:hover {
+		transform: translateY(-2px);
+		border-color: #58a6ff;
+	}
+	
+	.software-card header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 1rem;
+	}
+	
+	.software-card h2 {
+		color: #58a6ff;
+		margin: 0;
+		font-size: 1.5rem;
+	}
+	
+	.software-card h2 a {
+		color: #58a6ff;
+		text-decoration: none;
+		transition: color 0.2s ease;
+	}
+	
+	.software-card h2 a:hover {
+		color: #79c0ff;
+		text-decoration: underline;
+	}
+	
+	.version {
+		background: #21262d;
+		color: #7d8590;
+		padding: 0.25rem 0.75rem;
+		border-radius: 1rem;
+		font-size: 0.85rem;
+		font-family: monospace;
+	}
+	
+	.description {
+		color: #8b949e;
+		margin-bottom: 1.5rem;
+		line-height: 1.6;
+	}
+	
+	.features {
+		margin-bottom: 1.5rem;
+	}
+	
+	.features h3 {
+		color: #c9d1d9;
+		font-size: 1rem;
+		margin-bottom: 0.5rem;
+	}
+	
+	.features ul {
+		list-style: none;
+		padding: 0;
+	}
+	
+	.features li {
+		color: #8b949e;
+		padding: 0.25rem 0;
+		padding-left: 1rem;
+		position: relative;
+	}
+	
+	.features li::before {
+		content: "✓";
+		color: #58a6ff;
+		position: absolute;
+		left: 0;
+	}
+	
+	.details {
+		margin-bottom: 2rem;
+		padding-top: 1rem;
+		border-top: 1px solid #30363d;
+	}
+	
+	.detail-item {
+		color: #7d8590;
+		font-size: 0.9rem;
+		margin-bottom: 0.5rem;
+	}
+	
+	.detail-item strong {
+		color: #c9d1d9;
+	}
+	
+	.download-section {
+		text-align: center;
+	}
+	
+	.download-btn {
+		display: inline-block;
+		background: #58a6ff;
+		color: #0d1117;
+		padding: 0.75rem 2rem;
+		border-radius: 0.5rem;
+		text-decoration: none;
+		font-weight: 600;
+		font-size: 1rem;
+		transition: background-color 0.2s ease, transform 0.1s ease;
+		margin-bottom: 0.5rem;
+	}
+	
+	.download-btn:hover {
+		background: #79c0ff;
+		transform: translateY(-1px);
+	}
+	
+	.file-info {
+		display: block;
+		color: #7d8590;
+		font-size: 0.85rem;
+	}
+	
+	@media (max-width: 768px) {
+		.software-grid {
+			grid-template-columns: 1fr;
+		}
+		
+		.software-card {
+			padding: 1.5rem;
+		}
+		
+		.software-card header {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 0.5rem;
+		}
+	}
+</style>

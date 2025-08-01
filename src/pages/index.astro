@@ -1,16 +1,18 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
 
+const site_name = "Jackson's Site";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title={site_name}>
+	<h1>{site_name}</h1>
+	<p>Hello world. Welcome to my site. This is where I share a number of things I am up to and some of my thoughts. Please enjoy.</p>
+	<h2>TODO</h2>
+	<ul>
+		<li>Get actual blog posts up</li>
+		<li>Re-minimalize the software section</li>
+		<li>Add more content to home page</li>
+		<li>Finish favorite things page</li>
+		<li>Decide on and purchase domain name</li>
+	</ul>
+</BaseLayout>

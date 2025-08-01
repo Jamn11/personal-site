@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const books2025 = [
+    "When We Cease to Understand the World, by Benjamín Labatut",
+    "The Portrait of Dorian Gray, by Oscar Wilde",
+    "Norwegian Wood, by Haruki Murakami",
+    "The Left Hand of Darkness, by Ursula K. Le Guin",
+    "Piranesi, by Susanna Clarke",
+    "Something Wicked This Way Comes, by Ray Bradbury"
+];
+
+const books2024 = [
+    "To the Lighthouse, by Virginia Woolf",
+    "The Master and Margarita, by Mikhail Bulgakov",
+    "The Alchemist, by Paulo Coelho",
+    "Slaughterhouse-Five, by Kurt Vonnegut",
+    "Stolen Focus, by Johann Hari",
+    "Exhalation, by Ted Chiang",
+    "The Bell Jar, by Sylvia Plath",
+    "The Three Body Problem, by Liu Cixin",
+    "If On a Winter's Night a Traveler, by Italo Calvino",
+    "Martyr!, by Kaveh Akbar",
+    "Dune Messiah, by Frank Herbert",
+    "The Fall, by Albert Camus",
+    "The Interrogation, by J. M. G. Le Clézio",
+    "Breakfast of Champions, by Kurt Vonnegut",
+    "A Bad Business: Essential Stories, by Fyodor Dostoevsky",
+    "Brave New World, by Aldous Huxley",
+    "Invisible Cities, by Italo Calvino",
+    "Cat's Cradle (Technically DNF but close enough), by Kurt Vonnegut",
+    "The Moral Landscape, by Sam Harris",
+    "On What Matters Volume 1, by Derek Parfit",
+    "Ethics: Inventing Right and Wrong, by J. L. Mackie",
+    "Kafka on the Shore, by Haruki Murakami",
+    "The Wind Up Bird Chronicles, by Haruki Murakami",
+    "The Elephant Vanishes (collection), by Haruki Murakami",
+    "2666, by Roberto Bolaño",
+    "By Night in Chile, by Roberto Bolaño",
+    "Mr. Palomar, by Italo Calvino",
+    "The Castle (DNF), by Franz Kafka",
+    "Children of Dune (DNF), by Frank Herbert",
+    "On the Edge, by Nate Silver",
+    "The Righteous Mind, by Jonathan Haidt"
+];
+---
+
+<BaseLayout title="Reading Lists - Jackson's Site">
+	<h1>Reading Lists</h1>
+    <p>A list of things I have read, mostly for fun but sometimes for school. The list starts in 2024 because that is when I really made a concerted effort to read more for fun and record what I read.</p>
+    
+    <h2>2025 ({books2025.length})</h2>
+    <ul>
+        {books2025.map(book => <li>{book}</li>)}
+    </ul>
+    
+    <h2>2024 ({books2024.length})</h2>
+    <ul>
+        {books2024.map(book => <li>{book}</li>)}
+    </ul>
+</BaseLayout>
